@@ -168,13 +168,13 @@ if __name__ == '__main__':
         logger.log(step=epoch, content={"train_all_loss": train_all_loss,
                                         "train_global_loss": train_global_loss,
                                         "train_refine_loss": train_refine_loss,
-                                        "miou":train_miou})  # 日志
+                                        "train_miou":train_miou})  # 日志
         # 测试
         test_all_loss, test_global_loss, test_refine_loss, test_miou = test(model, criterion, test_loader, cfg, epoch)
         logger.log(step=epoch, content={"test_all_loss": test_all_loss,
                                         "test_global_loss": test_global_loss,
                                         "test_refine_loss": test_refine_loss,
-                                        "miou": test_miou})  # 日志
+                                        "test_miou": test_miou})  # 日志
         # 保存，is_best
         if test_miou > cfg.is_best:
             cfg.is_best = test_miou
